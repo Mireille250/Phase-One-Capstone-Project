@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -14,5 +16,42 @@ public class Main {
         System.out.println();
 
         ta.displayRole();
+        UniversityManager manager = new UniversityManager();
+        Scanner sc = new Scanner(System.in);
+        manager.registerStudent(new Student("Alice",20,"S01",3.7,"CS"));
+        manager.registerStudent(new Student("Bob",21,"S02",3.9,"CS"));
+        manager.registerStudent(new Student("Mike",22,"S03",3.2,"Engineering"));
+
+        double avg = manager.getAverageGPA("CS");
+        System.out.println("Average GPA: " + avg);
+
+        Student top = manager.getTopStudent();
+        System.out.println("Top Student: " + top.getName());
+
+        while (true) {
+
+            System.out.println("1.Register Student");
+            System.out.println("2.Create Course");
+            System.out.println("3.Exit");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    Student girl = new UndergraduateStudent("Mireille", 20, "S01", 3.6,"ICT");
+                    manager.registerStudent(girl);
+                    break;
+
+                case 2:
+                    Course c = new Course("CS101", "OOP", 3);
+                    manager.createCourse(c);
+                    break;
+
+                case 3:
+                    System.out.println("Saved and Exit");
+                    return;
+            }
+    }
     }
 }
