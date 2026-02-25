@@ -24,8 +24,7 @@ public class Main {
         double avg = manager.getAverageGPA("CS");
         System.out.println("Average GPA: " + avg);
 
-        Student top = manager.getTopStudent();
-        System.out.println("Top Student: " + top.getName());
+    static void menu() {
 
         while (true) {
 
