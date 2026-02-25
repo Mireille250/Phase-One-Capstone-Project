@@ -33,6 +33,7 @@ public class Main {
             System.out.println("1.Register Student");
             System.out.println("2.Create Course");
             System.out.println("3.Exit");
+            System.out.println("choose: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
