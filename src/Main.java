@@ -8,8 +8,11 @@ public class Main {
         boy.displayRole();
         System.out.println();
 
-        trainer.displayRole();
-        System.out.println();
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Patrick", 20, "S001", 3.8, "ICT"));
+        students.add(new Student("Khalid", 23, "S002", 4.0, "Civil Engineering"));
+        students.add(new Student("Marry", 25, "S003", 3.4, "Computer Science"));
+        FileManager.saveStudents(students);
 
 
         UniversityManager manager = new UniversityManager();
