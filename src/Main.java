@@ -7,10 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Student boy= new Student("Eric", 20, "S101", 3.8,"ICT");
-        Instructor trainer= new Instructor("Dr.SIBOMANA", 45, "Computer Science", "EMP22");
-        boy.displayRole();
-        System.out.println();
 
         List<Student> students = new ArrayList<>();
         students.add(new Student("Patrick", 20, "S001", 3.8, "ICT"));
