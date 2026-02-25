@@ -14,12 +14,9 @@ public class Main {
         students.add(new Student("Marry", 25, "S003", 3.4, "Computer Science"));
         FileManager.saveStudents(students);
 
-
-        UniversityManager manager = new UniversityManager();
-        Scanner sc = new Scanner(System.in);
-        manager.registerStudent(new Student("Alice",20,"S01",3.7,"CS"));
-        manager.registerStudent(new Student("Bob",21,"S02",3.9,"CS"));
-        manager.registerStudent(new Student("Mike",22,"S03",3.2,"Engineering"));
+        manager.registerStudent(new Student("Alice", 20, "S01", 3.7, "CS"));
+        manager.registerStudent(new Student("Bob", 21, "S02", 3.9, "CS"));
+        manager.registerStudent(new Student("Mike", 22, "S03", 3.2, "Engineering"));
 
         double avg = manager.getAverageGPA("CS");
         System.out.println("Average GPA: " + avg);
