@@ -63,7 +63,8 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Saved and Exit");
+                    FileManager.saveStudents(manager.getAllStudents());
+                    System.out.println("Saved. Goodbye!");
                     return;
 
                 default:
