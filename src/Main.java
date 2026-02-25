@@ -31,7 +31,7 @@ public class Main {
             System.out.print("Choose: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             switch (choice) {
 
