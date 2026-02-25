@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
+    static UniversityManager manager = new UniversityManager();
+
     public static void main(String[] args) {
 
         Student boy= new Student("Eric", 20, "S101", 3.8,"ICT");
