@@ -1,24 +1,33 @@
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.Collection;
 import java.util.List;
 
-public class FileManager {
-    public static void saveStudents(List<Student> students) {
 
-        try (FileWriter writer = new FileWriter("students.txt")) {
+public class FileManager {
+    public static void saveStudents(Collection<Student> students) {
+
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter("student.txt"));
 
             for (Student s : students) {
-                writer.write(s.getName() + "," + s.getStudentID() + "," + s.getGPA() + "\n");
+                String type = s.getClass().getSimpleName();
 
-                writer.close();
-
-                System.out.println("Successfully written to file.");
-
-
+                writer.println(type + "|"
+                        + s.getStudentID() + "|"
+                        + s.getName() + "|"
+                        + s.getGPA());
             }
 
+            writer.close();
+            System.out.println("Saved successfully!");
+
         } catch (IOException e) {
-            System.out.println("Error saving file");
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
+
+
+
+
+

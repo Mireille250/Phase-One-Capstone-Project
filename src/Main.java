@@ -1,35 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
+    static UniversityManager manager = new UniversityManager();
     public static void main(String[] args) {
+
         menu();
     }
-    static void menu(){
+        static void menu(){
+            List<Student> students = new ArrayList<>();
 
-        Student boy= new Student("Eric", 20, "S101", 3.8,"ICT");
-        Instructor trainer= new Instructor("Dr.SIBOMANA", 45, "Computer Science", "EMP22");
-        TeachingAssistant ta = new TeachingAssistant("Brian", 24, "S202", 3.9, "OOP","ICT");
+            students.add(new Student("Patrick", 20, "S001",3.8,"ICT"));
+            students.add(new Student("Khalid", 23, "S002",4.0,"civil engineering"));
+            students.add(new Student("Marry", 25, "S003",3.4,"Computer science"));
 
-        boy.displayRole();
-        System.out.println();
+            FileManager.saveStudents(students);
 
-        trainer.displayRole();
-        System.out.println();
+            Student boy= new Student("Eric", 20, "S101", 3.8,"ICT");
+            System.out.println();
 
 
-        UniversityManager manager = new UniversityManager();
-        Scanner sc = new Scanner(System.in);
-        manager.registerStudent(new Student("Alice",20,"S01",3.7,"CS"));
-        manager.registerStudent(new Student("Bob",21,"S02",3.9,"CS"));
-        manager.registerStudent(new Student("Mike",22,"S03",3.2,"Engineering"));
 
-        double avg = manager.getAverageGPA("CS");
-        System.out.println("Average GPA: " + avg);
-
-        Student top = manager.getTopStudent();
-        System.out.println("Top Student: " + top.getName());
 
         while (true) {
 
@@ -44,19 +37,43 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    Student girl = new UndergraduateStudent("Mireille", 20, "S01", 3.6,"ICT");
-                    manager.registerStudent(girl);
+                    System.out.print("ID: ");
+                    String id = scanner.nextLine();
+
+                    System.out.print("ID: ");
+                    int age = scanner.nextInt();
+
+
+                    System.out.print("Name: ");
+                    String name = scanner.nextLine();
+
+                    System.out.print("Department:");
+                    String department = scanner.nextLine();
+                    System.out.print("GPA");
+                    double gpa = scanner.nextDouble();
+
+                    Student student = new UndergraduateStudent(name, age, id, gpa, department);
+                    manager.registerStudent(student);
                     break;
 
                 case 2:
-                    Course c = new Course("CS101", "OOP", 3);
-                    manager.createCourse(c);
+                    manager.getAllStudents().stream()
+                            .filter(s -> s.getGPA() > 3.5)
+                            .forEach(s -> System.out.println(s.getName()));
                     break;
 
+
                 case 3:
-                    System.out.println("Saved and Exit");
+                    FileManager.saveStudents(manager.getAllStudents());
+                    System.out.println("Saved. Goodbye!");
+
                     return;
+                default:
+                    System.out.println("invalid choice");
             }
-    }
+        }
     }
 }
+
+
+

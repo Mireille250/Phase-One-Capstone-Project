@@ -6,14 +6,12 @@ public class Student extends Person {
     private String studentID;
     private double GPA;
     private String department;
-
     private Map<Course, Double> courses = new HashMap<>();
 
     public Student(String name, int age, String studentID, double GPA,String department) {
-        super(name, age);
+        super(name, age,department);
         this.studentID = studentID;
         this.GPA = GPA;
-        this.department =department;
     }
 
     public String getStudentID() {
@@ -39,17 +37,7 @@ public class Student extends Person {
     public void addCourse(Course course) {
         courses.put(course, 0.0);
     }
-
     @Override
-    public void displayRole() {
-        System.out.println("Name: " + getName());
-        System.out.println("age: "+getAge());
-        System.out.println("ID:"+getStudentID());
-        System.out.println("GPA: "+getGPA());
-        System.out.println("department: "+getDepartment());
-
-    }
-
     public double calculateTuition() {
         return 0;
     }

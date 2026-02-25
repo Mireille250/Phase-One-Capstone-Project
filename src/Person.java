@@ -1,11 +1,13 @@
 public abstract class Person {
     private String name;
     private int age;
+    private String department;
 
 
-    public Person(String name,int age){
+    public Person(String name,int age,String department){
         this.name = name;
         this.age = age;
+        this.department =department;
 
     }
 
@@ -27,7 +29,7 @@ public abstract class Person {
         this.age = age;
     }
 
-    public abstract void displayRole();
+    public abstract double calculateTuition();
 }
 
 
