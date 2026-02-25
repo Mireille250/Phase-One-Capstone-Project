@@ -35,8 +35,25 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    Student girl = new UndergraduateStudent("Mireille", 20, "S01", 3.6,"ICT");
-                    manager.registerStudent(girl);
+                    System.out.print("ID: ");
+                    String id = scanner.nextLine();
+
+                    System.out.print("Age: ");
+                    int age = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("Name: ");
+                    String name = scanner.nextLine();
+
+                    System.out.print("Department: ");
+                    String department = scanner.nextLine();
+
+                    System.out.print("GPA: ");
+                    double gpa = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    Student student = new UndergraduateStudent(name, age, id, gpa, department);
+                    manager.registerStudent(student);
                     break;
 
                 case 2:
