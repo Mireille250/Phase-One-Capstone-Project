@@ -57,8 +57,9 @@ public class Main {
                     break;
 
                 case 2:
-                    Course c = new Course("CS101", "OOP", 3);
-                    manager.createCourse(c);
+                    manager.getAllStudents().stream()
+                            .filter(s -> s.getGPA() > 3.5)
+                            .forEach(s -> System.out.println(s.getName()));
                     break;
 
                 case 3:
