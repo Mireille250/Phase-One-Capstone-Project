@@ -4,6 +4,9 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        menu();
+    }
+    static void menu(){
 
         Student boy= new Student("Eric", 20, "S101", 3.8,"ICT");
         Instructor trainer= new Instructor("Dr.SIBOMANA", 45, "Computer Science", "EMP22");
