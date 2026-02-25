@@ -43,4 +43,8 @@ public class UniversityManager {
         return students.stream()
                 .max(Comparator.comparingDouble(Student::getGPA));
     }
+
+    public List<Student> getAllStudents() {
+        return students;
+    }
 }
