@@ -65,6 +65,9 @@ public class Main {
                 case 3:
                     System.out.println("Saved and Exit");
                     return;
+
+                default:
+                    System.out.println("Invalid choice");
             }
         }
     }
