@@ -15,7 +15,7 @@ public class Main {
         trainer.displayRole();
         System.out.println();
 
-        ta.displayRole();
+
         UniversityManager manager = new UniversityManager();
         Scanner sc = new Scanner(System.in);
         manager.registerStudent(new Student("Alice",20,"S01",3.7,"CS"));
