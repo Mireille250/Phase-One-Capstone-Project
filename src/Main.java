@@ -18,8 +18,8 @@ public class Main {
         manager.registerStudent(new Student("Bob", 21, "S02", 3.9, "CS"));
         manager.registerStudent(new Student("Mike", 22, "S03", 3.2, "Engineering"));
 
-        double avg = manager.getAverageGPA("CS");
-        System.out.println("Average GPA: " + avg);
+        menu();
+    }
 
     static void menu() {
 
