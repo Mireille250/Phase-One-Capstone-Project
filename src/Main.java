@@ -34,7 +34,8 @@ public class Main {
             System.out.println("2.Create Course");
             System.out.println("3.Exit");
 
-            int choice = sc.nextInt();
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
 
